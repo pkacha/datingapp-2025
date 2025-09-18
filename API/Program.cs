@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         var tokenKey = builder.Configuration["TokenKey"]
-            ?? throw new Exception("Token key not found - program.cs");
+            ?? throw new Exception("Token key not found - Program.cs");
         if (tokenKey.Length < 64)
             throw new Exception("Your token needs to be  >= 64 characters");
         options.TokenValidationParameters = new TokenValidationParameters

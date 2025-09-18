@@ -34,7 +34,7 @@ export class App implements OnInit {
 
   async getMembers() {
     try {
-      return lastValueFrom(this.http.get<User[]>('https://localhost:5001/api/users'));
+      return lastValueFrom(this.http.get<User[]>('users'));
     } finally {
     }
   }
